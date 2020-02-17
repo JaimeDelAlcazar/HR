@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>River Stories</title>
+
+    <!--<link rel="icon" href="http://example.com/favicon.png">-->
+    <link rel="icon" href="https://citariverstories.s3-us-west-1.amazonaws.com/img/logo_riverStories.png">
+
+    <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <!--JQuery JS Script-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!--Bootstrap CSS Style-->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+
+    <!--Bottom Cards section CSS Style-->
+    <link rel="stylesheet" href="css/bottom-cards-style.css">
+
+    <!--Handling JS Scripts-->
+    <script src="./lib/CLDRPluralRuleParser/CLDRPluralRuleParser.js"></script>
+    <script src="./lib/jquery.i18n/jquery.i18n.js"></script>
+    <script src="./lib/jquery.i18n/jquery.i18n.messagestore.js"></script>
+    <script src="./lib/jquery.i18n/jquery.i18n.fallbacks.js"></script>
+    <script src="./lib/jquery.i18n/jquery.i18n.language.js"></script>
+    <script src="./lib/jquery.i18n/jquery.i18n.parser.js"></script>
+    <script src="./lib/jquery.i18n/jquery.i18n.emitter.js"></script>
+    <script src="./lib/jquery.i18n/jquery.i18n.emitter.bidi.js"></script>
+    <script src="./lib/history/jquery.history.js"></script>
+    <script src="./lib/url/url.min.js"></script>
+
+    <!--New layout script-->
+    <script type="text/javascript" src="./js/dancingRivers/dancingRivers.js"></script>
+
+    <!--Language Handler Logic JS script-->
+    <script type="text/javascript" src="js/index/language_handler_logic.js"></script>
+    <script type="text/javascript" src="js/index/fade_rs.js"></script>
+
+    <link rel="stylesheet" href="css/riverStories/river_stories_general.css">
+    <link rel="stylesheet" href="css/riverStories/river_stories_footer.css">
+
+    <link rel="stylesheet" media="screen and (max-width: 992px)" href="./css/test1.css" />
+    <link rel="stylesheet" media="screen and (min-width: 993px)" href="./css/test2.css" />
+
+    <script type="text/javascript" src="js/index/general_web_riverStories.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAq3F5ugcDYAm1NwcZ1gQL4IIszRpQmm_k&callback=initMap"></script>
+
+</head>
+<!--<style>
+    #loading {
+        display: block;
+        /*position: absolute;*/
+        position: fixed;
+        top: 0;
+        left: 0;
+        /*bottom: 0;
+        right: 0;*/
+        z-index: 1000000;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(192, 192, 192, 1);
+        background-image: url("https://i.stack.imgur.com/MnyxU.gif");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+</style>-->
+
+<body id="body_main">
+
+    <div id="loading"></div>
+
+
+    <div class="menu-sections">
+        <div class="logo-container">
+            <div id="Logo" class="logo-RS">
+                <img class="logo-icon"
+                    src="https://citariverstories.s3-us-west-1.amazonaws.com/img/logo_riverStories.png">
+            </div>
+        </div>
+        <div class="menu-container">
+            <ul>
+                <li><a class="text-menu-section" href="index.html">Historia del Río</a></li>
+                <li><a class="text-menu-section" href="Mapa.html">Mapa de Historias</a></li>
+                <li><a class="text-menu-section" href="Historia.html">Envía tu Historia</a></li>
+                <li><a class="text-menu-section" href="Nosotros.html">Nosotros</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- ----------------------------------------------------------------------------------------------------------------------- -->
+
+    <div id="overlay">
+
+        <!-- --------------Historias------------------ -->
+        <div id="historias-overlay">
+
+            <div class="historias-overlay-container">
+
+                <div class="button-back">
+                    <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-back-mapa.png" width="auto"
+                        height="40px">
+                </div>
+
+                <div class="background-title-historia-mapa">
+                    <div class="container-title-historia-mapa">
+                        <p style="margin: 0; font-family: Acumin-bold">The first dunes of the
+                            Amazon river</p>
+                        <p style="margin: 0; font-size: 44px; font-family: Acumin">Wan Chantavilasvong </p>
+                        <p style="margin: 0; font-size: 28px; font-family: Acumin">Philippines</p>
+                    </div>
+                </div>
+
+                <!--Descripcion-->
+                <div class="section-2">
+                    <p class="text-decription-historia-mapa">It was in the midst of winter 2018 but the tropical air
+                        remained hot and humid in contrast to the cold foggy morning that I was experiencing in Lima
+                        just a few hours ago. We arrived in Iquitos, the so-called “Capital of the Amazonias”, took a
+                        rickshaw, got our equipment, and then headed into the inner city. The city was vibrant with
+                        tourist spots and local delicacies, but unfortunately, we did not spend much time there. On the
+                        next morning, we loaded up our gears into a car and headed towards Nauta, a city where we were
+                        going to do our scientific fieldwork.</p>
+                </div>
+
+                <!--Image-->
+                <div class="section-3">
+                </div>
+
+                <!--Descripcion-->
+                <div class="section-4">
+                    <p class="text-decription-historia-mapa">The Kukamas have multiple stories that telltale about the
+                        origins of their people. However, no matter what the storylines are, the rivers and their
+                        surrounding ecosystems always play large roles in their stories. Subsequently, they also play
+                        large roles in the Kukamas’ actual livelihoods as well. </p>
+                    <br>
+                    <p class="text-decription-historia-mapa">As the Kukama communities spread out along the Marañon, the
+                        Ucayali, and the Amazon river, fishing is ingrained in their livelihoods and is one of their
+                        main sources of income. Most fishermen would go out in the dark to catch fishes and other river
+                        creatures, and they only start to come back and dock their boats along the small canal next to
+                        the city market early in the morning when their boats are filled. </p>
+                </div>
+
+                <!--Image-->
+                <div class="section-5">
+                </div>
+
+                <!--Descripcion-->
+                <div class="section-6">
+                    <p class="text-decription-historia-mapa">On one of the days that we were there, we decided to wake
+                        up at four in the morning, and walk to where fishermen would dock their boats. As we talked to
+                        the fishermen who were busy sorting their fishes and preparing them for sellers. A fisherman
+                        explained to us that many prefer to fish in the nearby Ucayali river rather than in the Marañon
+                        because they often find larger fish there and larger fish means better income. I wondered such
+                        perception was until I later understood that the Lower Ucayali river near the beginning of the
+                        Amazon has more variety of bedforms than the Marañon. The variety of which, then, allows for
+                        different types of fishes to spawn and grow—shallow water often houses small fishes and deep
+                        water allows for fishes to grow larger.</p>
+                    <br>
+                    <p class="text-decription-historia-mapa">Every day hundreds and thousands of fishes, big and small,
+                        are caught from these rivers and are sold in the dimly lit Nauta market at 4 to 6 in the
+                        morning. Many of them are also packed to be delivered to markets in Iquitos. Without the rich
+                        ecosystems of the rivers, the variety of fishes and animals underwater can decrease, and in
+                        turn, can directly affect the Kukama’s income and livelihood.</p>
+                </div>
+
+                <!--Images, Description-->
+                <div class="section-7">
+                    <div
+                        style="display: flex; flex-direction: row; justify-content: center; align-items: center; width: 80%; margin-bottom: 60px;">
+                        <div style="width: 50%; padding: 20px;">
+                            <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/historia_wan_3.PNG"
+                                style=" height: 100%; width: 100%; cursor: pointer; ">
+                        </div>
+
+                        <div style="width: 50%; padding: 20px;">
+                            <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/historia_wan_4.PNG"
+                                style=" height: auto; width: 100%; cursor: pointer; ">
+                        </div>
+                    </div>
+
+                    <p class="text-decription-historia-mapa">To the Kukamas, their rivers are not just bodies of water
+                        that flow from one place to another, but rather are considered creatures with their own spirits
+                        and souls—protectors of the Kukamas. In a sense, the Kukamas are right that rivers are like
+                        creatures because rivers can also move almost like any other living things.</p>
+                    <br>
+                    <p class="text-decription-historia-mapa">Unlike how we and animals have some sort of control over
+                        our moves, however, rivers seem to be moving because the land that contains the water changes
+                        through time. The water with its strong current can carve away lands, and the spilled out
+                        sediments can be carried over to create new landmass elsewhere. Coarse sediment is often heavier
+                        and is harder to be pushed along by the water current, and so sometimes they begin to settle
+                        together. As the mass of sediment becomes more stabilized, it can also trap more grain which
+                        keeps on enlarging the mass, and eventually, the mass emerges as an island in the middle of
+                        rivers or an extension of land along river banks.</p>
+                </div>
+
+                <!--Autor Section-->
+                <div class="container-autor-historia-mapa">
+                    <div class="historias-people-container">
+                        <div class="historias-people-photo"
+                            style=" background-image: url('https://citadancingrivers.s3-us-west-1.amazonaws.com/img/icon-person.jpg')">
+                        </div>
+
+                        <div style="width: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center;
+                    font-family: Acumin">
+                            <p class="historias-people-text-name">Wan Chantavilasvong</p>
+                            <p class="historias-people-text-description">Investigador</p>
+                            <p class="historias-people-text-description">CITA, UTEC</p>
+                            <p class="historias-autor-number-text">Autor de 3 historias</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!---->
+        <div id="historias-overlay-2">
+
+            <div class="historias-overlay-container-style-2">
+
+                <div class="button-back">
+                    <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-back-mapa.png" width="auto"
+                        height="40px">
+                </div>
+
+                <div class="background-title-historia-mapa">
+                    <div class="container-title-historia-mapa">
+                        <p style="margin: 0; font-family: Acumin-bold">Mapeando el río Marañón</p>
+                        <p style="margin: 0; font-size: 44px; font-family: Acumin">Gabriela Flores</p>
+                        <p style="margin: 0; font-size: 28px; font-family: Acumin">Perú</p>
+                    </div>
+                </div>
+
+                <!---->
+                <div class="section-2">
+                    <p class="text-decription-historia-mapa">Son casi las seis de la mañana y le digo buenos días al río
+                        Huallaga. Estoy en un embarcadero en Yurimaguas y espero que llegue la chalupa que me llevará
+                        hasta el río Marañón, a un encuentro que he ansiado hace mucho tiempo. La mañana está fría y el
+                        cielo es de un color azul oscuro que va degradándose hasta alcanzar unos tonos amarillentos
+                        cerca de la línea de árboles. Junto a los sonidos de animales que no puedo ver, se crea una
+                        atmósfera muy tranquila.</p>
+                </div>
+
+                <!---->
+                <div class="section-3">
+                </div>
+
+                <!---->
+                <div class="section-4">
+                    <p class="text-decription-historia-mapa">El cielo aún no se ha aclarado cuando encienden el motor e
+                        iniciamos el viaje. Los 40 km/h a los que avanza la chalupa traen un viento frío, el cual
+                        contrasta con el sol que ilumina el río, el bosque y calienta la arena de las playas que vamos
+                        pasando. Estoy aún por el río Huallaga, pero acercándome a la confluencia con el Marañón.
+                        Mientras navegamos me pongo a pensar que en los últimos meses estuve mirando al río Marañón
+                        solamente a través de la pantalla de mi computadora, mientras reconstruía parte de su historia,
+                        pero dentro de unos minutos estaré navegando en él.</p>
+                    <br>
+                    <p class="text-decription-historia-mapa">Mapear la historia del río Marañón fue un proceso que
+                        partió por obtener la forma del río, delimitar sus márgenes y demarcar las islas que había a lo
+                        largo de su cauce, todo a partir de imágenes satelitales de varios años. Fue ahí cuando comencé
+                        a darme cuenta que el río modificaba su forma de un año a otro. Estos cambios eran muy notorios
+                        en algunas secciones del río, mientras que en otras solo eran perceptibles tras un análisis más
+                        minucioso. A partir de esto, y para conocer mejor las dinámicas que rigen al río, medí distintos
+                        parámetros, como el ancho promedio de los canales, la sinuosidad de cada tramo y las tasas de
+                        erosión y deposición desde la confluencia con el río Ucayali hasta el pongo de Manseriche. </p>
+                </div>
+
+                <!---->
+                <div class="section-5">
+                </div>
+
+                <!---->
+                <div class="section-6">
+                    <p class="text-decription-historia-mapa">Conforme me acerco al último tramo del último meandro del
+                        Huallaga comienzo a ver lo que es el comienzo del río Marañón y aflora la emoción e ímpetu de
+                        querer recordar cada detalle a partir de este momento. Me encuentro con un enorme río de color
+                        chocolate que se extiende por todos lados. Es tanta su extensión que al buscar la margen más
+                        lejana del río solo llego a ver una hilera lejana de árboles. Cuando me adentro plenamente y
+                        navego por las aguas del río Marañón me percato de que la idea que creía tener del río es otra.
+                        En mi mente están los mapas que he realizado y los parámetros que medí como simples números,
+                        pero ya en el río puedo sentir la magnitud de los 700 metros de ancho del canal y sentirme
+                        pequeña ante el Marañón. </p>
+                    <br>
+                    <p class="text-decription-historia-mapa">A pesar de tener un conocimiento previo acerca del río y
+                        las dinámicas que ha atravesado a lo largo de los años, siento que no lo conozco para nada, que
+                        todo es nuevo. Cada isla que creía pequeña es enorme, y muchas de las islas que había
+                        identificado unos meses atrás ya no tienen la misma forma. Además, otros elementos hacen su
+                        aparición. Troncos incrustados en el río o “quirumas”, grandes remolinos o “muyunas” que me
+                        atemorizan al pasar a su costado, peque peques que pasan lento llevando frutas, los “rápidos”
+                        que sirven como medio de transporte fluvial, grandes barcos de carga y la presencia de minería
+                        informal. Mientras sigo navegando por el Marañón me doy cuenta que hay una realidad diferente
+                        estando en el río de la que se obtiene viéndolo desde las imágenes satelitales, y es justamente
+                        esa realidad, la que no se ve en el mapa, la que conforma todo el territorio amazónico.</p>
+                </div>
+
+                <!---->
+                <div class="section-7">
+                    <div
+                        style="display: flex; flex-direction: row; justify-content: center; align-items: center; width: 80%; margin-bottom: 60px;">
+                        <div style="width: 440px; padding: 20px; height: 400px; overflow: hidden;
+                        background-image: url('https://citariverstories.s3-us-west-1.amazonaws.com/img/historia_gabriela_3.jpg');
+                        background-position: center; margin: 0 20px;">
+                        </div>
+
+                        <div style="width: 440px; padding: 20px; height: 400px; overflow: hidden;
+                        background-image: url('https://citariverstories.s3-us-west-1.amazonaws.com/img/historia_gabriela_4.jpg');
+                        background-position: center; margin: 0 20px;">
+                        </div>
+                    </div>
+
+                    <p class="text-decription-historia-mapa">Al plasmar el río Marañón en un mapa estaba plasmando solo
+                        parte de la realidad del río en una hoja, pero, sin un contexto local, no estaba plasmando el
+                        entorno en el cual se desenvuelve el río y los distintos elementos que lo conforman. Conocer al
+                        río Marañón me ha hecho distinguir este entorno y sus elementos, brindándome una nueva
+                        perspectiva con la cual puedo releer los mapas que había elaborado y seguir estudiando y
+                        conociendo los ríos amazónicos.</p>
+                    <br>
+                    <p class="text-decription-historia-mapa">Ya está atardeciendo, el cielo se encuentra lleno de nubes
+                        y tiene unas tonalidades celestes que van degradándose hasta alcanzar unos tonos naranjas cerca
+                        de la línea de árboles. Llego al puerto de San Lorenzo y salgo de la chalupa, llevando mi
+                        mochila y los nuevos conocimientos que el río Marañón me ha dado ese día.</p>
+
+                </div>
+
+                <div class="container-autor-historia-mapa">
+
+                    <!---->
+                    <div class="historias-people-container">
+                        <div class="historias-people-photo"
+                            style=" background-image: url('https://citadancingrivers.s3-us-west-1.amazonaws.com/img/icon-person.jpg')">
+                        </div>
+
+                        <div style="width: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center;
+                    font-family: Acumin">
+                            <p class="historias-people-text-name">Gabriela Flores</p>
+                            <p class="historias-people-text-description">Investigador</p>
+                            <p class="historias-people-text-description">CITA, UTEC</p>
+                            <p class="historias-autor-number-text">Autor de 3 historias</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="historias-overlay-3">
+
+            <div class="historias-overlay-container">
+                <div class="button-back">
+                    <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-back-mapa.png" width="auto"
+                        height="40px">
+                </div>
+
+                <div class="background-title-historia-mapa">
+                    <div class="container-title-historia-mapa">
+                        <p style="margin: 0; font-family: Acumin-bold">Experiencias en las profundidades de la selva</p>
+                        <p style="margin: 0; font-size: 44px; font-family: Acumin">Segundo Wilder Satalaya</p>
+                        <p style="margin: 0; font-size: 28px; font-family: Acumin">Perú</p>
+                    </div>
+                </div>
+
+                <!--Descripcion-->
+                <div style="    position: relative;
+            width: 100%;
+            /*height: 100%;*/
+            padding: 80px 0;
+            background-color: #3D352F;
+            /*display: flex;*/
+            /*flex-direction: ;*/
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;">
+                    <p class="text-decription-historia-mapa">Por mi profesión viajo mucho, ya sea por motivo de trabajo
+                        o por el simple hecho de conocer más el Perú y el extranjero, siempre y cuando esté ligado a la
+                        naturaleza. Fue en el viaje que realicé a Tingo María, al Parque Nacional, que conocí a Yulissa
+                        Estrada.
+                        Pasó el tiempo y me comentó acerca del proyecto que realizarían en los ríos de la selva,
+                        escuchar acerca de lo que tenían en mente ejecutar fue alucinante para mí. </p>
+                </div>
+
+
+                <div style="    position: relative;
+            width: 100%;
+            padding: 80px 0;
+            background-image: url('https://citariverstories.s3-us-west-1.amazonaws.com/historias/segundo_satalaya/historia_satalaya_2.jpg');
+            /*background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;*/
+            background-size: auto 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 80px 0;">
+
+                </div>
+
+
+                <!--Section4-->
+                <!--Descripcion-->
+                <div style="    position: relative;
+            width: 100%;
+            /*height: 100%;*/
+            padding: 80px 0;
+            background-color: #47806E;
+            /*display: flex;*/
+            /*flex-direction: ;*/
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;">
+
+                    <p class="text-decription-historia-mapa">La primera vez que llegué al CITA, ubicado dentro de la
+                        UTEC, fue para capacitar a su personal en nudos y cuerdas. Recuerdo que llevé a mi hija de 11
+                        años (Arianita) para que conozca las instalaciones y sin planificarlo me apoyó mucho en la parte
+                        práctica pues enseñaba a las jóvenes de una forma que yo no lo hubiera pensado.</p>
+                    <br>
+                    <p class="text-decription-historia-mapa">La segunda vez fui al campo a brindar capacitación sobre
+                        cuerdas y nudos, además de supervivencia en selva y primeros auxilios. Allí conocí a Leo
+                        Guerrero, Jorge Abad y al personal responsable del proyecto. En esa ocasión, Leo me planteó la
+                        idea de que los acompañe como rescatista en los trabajos de investigación en campo, conocer los
+                        ríos desde otra perspectiva era muy interesante y sin dudar acepte la propuesta.</p>
+
+                </div>
+
+
+
+                <div style="position: relative;
+            width: 100%;
+            padding: 80px 0;
+            background-image: url('https://citariverstories.s3-us-west-1.amazonaws.com/historias/segundo_satalaya/historia_satalaya_4.jpg');
+            /*background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;*/
+            background-size: auto 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 80px 0;">
+                </div>
+
+                <div style="position: relative;
+            width: 100%;
+            /*height: 100%;*/
+            padding: 80px 0;
+            background-color: #9C8B68;
+            /*display: flex;*/
+            /*flex-direction: ;*/
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;">
+                    <p class="text-decription-historia-mapa">Inicié el acompañamiento, durante un mes, y fue todo un
+                        reto realizar los sistemas de poleas en el río debido a que tiene mucha corriente y obstáculos.
+                        Existe una notable diferencia entre realizar un rescate en roca y arrojar al vacío el sistema de
+                        poleas donde es posible observar todo lo que sucede abajo o hacia dónde se va a descender. En
+                        los ríos se trabaja de manera diferente, por ejemplo, se marca las cuerdas para trabajar en
+                        distintas profundidades; con Flor Fuentes mejoramos el sistema de poleas para aligerar el peso
+                        del muestreador (PEZ) y realizar el trabajo con el menor esfuerzo posible.</p>
+                    <br>
+                    <p class="text-decription-historia-mapa">Lo maravilloso de esta experiencia fue conocer personas de
+                        distintas profesiones, que tienen el mismo objetivo, estudiar y conservar el medio ambiente.
+                        Estos jóvenes son Henry, Hernán, Bryan, Grecia, Lynn, Junior, David, Evelyn (Perú) y Kensuke
+                        (Japón). </p>
+                </div>
+
+                <div style="position: relative;
+            width: 100%;
+            /*height: 100%;*/
+            padding: 80px 0;
+            background-color: #65574D;
+            /*display: flex;*/
+            /*flex-direction: ;*/
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;">
+
+                    <div
+                        style="display: flex; flex-direction: row; justify-content: center; align-items: center; width: 80%; margin-bottom: 60px;">
+                        <div style="width: 440px; padding: 20px; height: 360px; overflow: hidden;
+                        background-image: url('https://citariverstories.s3-us-west-1.amazonaws.com/historias/segundo_satalaya/historia_satalaya_6.jpg');
+                        background-position: center; margin: 0 20px; background-repeat: no-repeat">
+                        </div>
+
+                        <div style="width: 410px; padding: 20px; height: 360px; overflow: hidden;
+                        background-image: url('https://citariverstories.s3-us-west-1.amazonaws.com/historias/segundo_satalaya/historia_satalaya_8.jpg');
+                        background-position: center; margin: 0 20px;">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="container-autor-historia-mapa">
+                    <div class="historias-people-container">
+                        <div class="historias-people-photo"
+                            style=" background-image: url('https://citadancingrivers.s3-us-west-1.amazonaws.com/img/icon-person.jpg')">
+                        </div>
+
+                        <div style="width: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center;
+                    font-family: Acumin">
+                            <p class="historias-people-text-name">Segundo Satalaya</p>
+                            <p class="historias-people-text-description">Investigador</p>
+                            <p class="historias-people-text-description">CITA, UTEC</p>
+                            <p class="historias-autor-number-text">Autor de 3 historias</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Videohistorias-->
+        <div id="videohistorias-overlay">
+            <div class="videohistorias-overlay-container">
+                <div class="button-back">
+                    <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-back-mapa.png" width="auto"
+                        height="40px">
+                </div>
+
+                <!--<div class="scroll-overlay-box">-->
+                <div class="box-videohistoria scroll-overlay-box">
+                    <div class="container-title-videohistoria">
+                        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-videohistorias.png"
+                            style=" height: 40px; width: auto; cursor: pointer;">
+                        <p>Secretos de la pesca en la Amazonía</p>
+                    </div>
+
+                    <div>
+                        <iframe width="790" height="450" src="https://www.youtube.com/embed/XNRqP6Dtujk" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <p style="color: #ffffff; font-family: Museo-Sans-500; font-size: 18px; margin: 0;">Realización:
+                            Radio Ucamara</p>
+                        <p style="color: #ffffff; font-family: Museo-Sans-500; font-size: 18px; margin: 0;">Año: 2015
+                        </p>
+                        <p style="color: #ffffff; font-family: Museo-Sans-500; font-size: 18px; margin: 0;">Lugar:
+                            Iquitos</p>
+                        <br>
+                        <p style="color: #ffffff; font-family: Museo-Sans-500; font-size: 22px; margin: 0;">En los
+                            pueblos Kukama, de la Amazonia Peruana, la vida es una convivencia con la naturaleza y los
+                            espiritus. La pesca, uno de los principales sustento para la alimentacion de la familia, es
+                            un arte que requiere saber hablar con
+                            los animas del agua y de los pescados, para tener su permiso y lograr una buena pesca. </p>
+
+                    </div>
+                </div>
+                <!--</div>-->
+
+            </div>
+        </div>
+
+        <!---->
+        <div id="videohistorias-overlay-2">
+            <div class="videohistorias-overlay-container">
+                <div class="button-back">
+                    <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-back-mapa.png" width="auto"
+                        height="40px">
+                </div>
+
+                <div class="box-videohistoria scroll-overlay-box">
+                    <div class="container-title-videohistoria">
+                        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-videohistorias.png"
+                            style=" height: 40px; width: auto; cursor: pointer;">
+                        <p>Ayriwa - Las Muyunas</p>
+                    </div>
+
+                    <div>
+                        <iframe width="790" height="450" src="https://www.youtube.com/embed/TSMljd5YtHU" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <p style="color: #ffffff; font-family: Museo-Sans-500; font-size: 18px; margin: 0;">Realización:
+                            Radio Ucamara</p>
+                        <p style="color: #ffffff; font-family: Museo-Sans-500; font-size: 18px; margin: 0;">Año: 2015
+                        </p>
+                        <p style="color: #ffffff; font-family: Museo-Sans-500; font-size: 18px; margin: 0;">Lugar:
+                            Iquitos</p>
+                        <br>
+                        <p style="color: #ffffff; font-family: Museo-Sans-500; font-size: 22px; margin: 0;">En los
+                            pueblos Kukama, de la Amazonia Peruana, la vida es una convivencia con la naturaleza y los
+                            espiritus. La pesca, uno de los principales sustento para la alimentacion de la familia, es
+                            un arte que requiere saber hablar con
+                            los animas del agua y de los pescados, para tener su permiso y lograr una buena pesca. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!---->
+        <div id="videohistorias-overlay-3">
+            <div class="videohistorias-overlay-container">
+                <div class="button-back">
+                    <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-back-mapa.png" width="auto"
+                        height="40px">
+                </div>
+
+                <div class="box-videohistoria scroll-overlay-box">
+                    <div class="container-title-videohistoria">
+                        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-videohistorias.png"
+                            style=" height: 40px; width: auto; cursor: pointer;">
+                        <p>Cochas Encantadas</p>
+                    </div>
+
+                    <div>
+                        <iframe width="790" height="450" src="https://www.youtube.com/embed/O69-BfqwC-U" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <p style="color: #ffffff; font-family: Museo-Sans-500; font-size: 18px; margin: 0;">Realización:
+                            Radio Ucamara</p>
+                        <p style="color: #ffffff; font-family: Museo-Sans-500; font-size: 18px; margin: 0;">Año: 2015
+                        </p>
+                        <p style="color: #ffffff; font-family: Museo-Sans-500; font-size: 18px; margin: 0;">Lugar:
+                            Iquitos</p>
+                        <br>
+                        <p style="color: #ffffff; font-family: Museo-Sans-500; font-size: 22px; margin: 0;">En los
+                            pueblos Kukama, de la Amazonia Peruana, la vida es una convivencia con la naturaleza y los
+                            espiritus. La pesca, uno de los principales sustento para la alimentacion de la familia, es
+                            un arte que requiere saber hablar con
+                            los animas del agua y de los pescados, para tener su permiso y lograr una buena pesca. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Vuelos-->
+        <div id="vuelos-overlay">
+            <div class="vuelos-overlay-container" style=" overflow-y: scroll;">
+                <div class="button-back">
+                    <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-back-mapa.png" width="auto"
+                        height="40px">
+                </div>
+
+                <video class="video-vuelo" muted loop autoplay
+                    src="https://citavisualizador.s3-us-west-1.amazonaws.com/videos/drone_flights/Masisea_720p.mp4">
+                    <source type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+
+                <div class="container-title-vuelo">
+                    <h1>Antiguo canal del río Masisea</h1>
+                    <p>Masisea</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="vuelos-overlay-2">
+            <div class="vuelos-overlay-container">
+                <div class="button-back">
+                    <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-back-mapa.png" width="auto"
+                        height="40px">
+                </div>
+
+                <video muted loop autoplay
+                    style="display: block; z-index: 500; width: 100%; background-size: 75% auto; background-position: center;"
+                    src="https://citavisualizador.s3-us-west-1.amazonaws.com/videos/drone_flights/Uchiza_720p.mp4">
+                    <source type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+
+                <div class="container-title-vuelo">
+                    <h1>Río Huallaga - Chontayacu</h1>
+                    <p>Uchiza</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="vuelos-overlay-3">
+            <div class="vuelos-overlay-container">
+                <div class="button-back">
+                    <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-back-mapa.png" width="auto"
+                        height="40px">
+                </div>
+
+                <video muted loop autoplay
+                    style="display: block; z-index: 500; width: 100%; background-size: 75% auto; background-position: center;"
+                    src="https://citavisualizador.s3-us-west-1.amazonaws.com/videos/drone_flights/Pongo_Manseriche_720p.mp4">
+                    <source type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+
+                <div class="container-title-vuelo">
+                    <h1>Río Marañon</h1>
+                    <p>Pongo de Manseriche</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        /*.mapa-legend-text {
+        text-align: right;
+        animation: left_to_right 3s ease;
+    }
+
+    @keyframes left_to_right {
+        from {
+            margin-left: -100%;
+        }
+        to {
+            margin-left: 0;
+        }
+    }*/
+
+
+        /*.text-legend {
+        text-align: right;
+        animation: left_to_right 3s ease;
+    }
+
+    @keyframes left_to_right {
+        from {
+            margin-left: -100%;
+        }
+        to {
+            margin-left: 0;
+        }
+    }*/
+
+
+
+
+
+
+        .mapa-legend-text {
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.6);
+            margin-left: 30px;
+            height: 40px;
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            color: #ffffff;
+            font-family: Museo-Sans-500;
+            font-size: 26px;
+            align-items: center;
+        }
+
+        .text-legend {
+            /* margin: 0; */
+            margin: 0 20px;
+            height: inherit;
+            /* width: inherit; */
+        }
+    </style>
+
+
+    <!-- Leyenda -->
+    <div class="intro-section">
+
+        <div id="image-container_" style="width: 100%; height: 100%">
+            <div id="map"></div>
+        </div>
+
+        <div class="mapa-legend-container">
+
+            <div class="mapa-text-container">
+                <img id="historias-icon"
+                    src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-historias.png"
+                    style=" height: 52px; width: auto; cursor: pointer;">
+                <div  id="historias-legend" class="mapa-legend-text">
+                    <div class="text-legend">Historias</div>
+                </div>
+                <!-- <img id="historias-icon" src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-historias.png"  style=" height: 52px; width: auto; cursor: pointer;" >
+
+                <div id="historias-legend" class="mapa-legend-text">
+                    <p id="historias-text" class="text-legend">Historias</p>
+
+                </div> -->
+            </div>
+
+            <div class="mapa-text-container">
+                <img id="videohistorias-icon"
+                    src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-videohistorias.png"
+                    style=" height: 52px; width: auto; cursor: pointer;">
+                <div  id="videohistorias-legend" class="mapa-legend-text">
+                    <div class="text-legend">Videohistorias</div>
+                 </div>
+            </div>
+
+            <div class="mapa-text-container">
+                <img id="vuelo-icon" src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-vuelo.png"
+                    style=" height: 52px; width: auto; cursor: pointer;">
+                <div  id="vuelo-legend" class="mapa-legend-text">
+                    <div class="text-legend">Vuelo de pájaro</div>
+                </div>
+            </div>
+
+
+            <!-- <div class="mapa-text-container">
+                <img id="videohistorias-icon"
+                    src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-videohistorias.png"
+                    style=" height: 52px; width: auto; cursor: pointer;">
+                <p id="videohistorias-legend" class="mapa-legend-text">Videohistorias</p>
+            </div>
+
+            <div class="mapa-text-container">
+                <img id="vuelo-icon" src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-vuelo.png"
+                    style=" height: 52px; width: auto; cursor: pointer;">
+                <p id="vuelo-legend" class="mapa-legend-text">Vuelo de pájaro</p>
+            </div> -->
+        </div>
+
+        <!-- <script>
+            $(document).ready(function () {
+                var boxWidth = $(".mapa-legend-text").width();
+
+
+                /* $("#historias-icon").hover(function () {
+                    $(".mapa-legend-text").animate({
+                        width: boxWidth
+                    });
+                }); */
+
+                $("#historias-icon").mouseenter(function () {
+                    $(".mapa-legend-text").animate({
+                        width: boxWidth
+                    });
+                });
+
+                $("#historias-icon").mouseleave(function(){
+                    $(".mapa-legend-text").animate({
+                        width: 0
+                    });
+                });
+
+                /* $("#videohistorias-icon").hover(function () {
+                    $(".mapa-legend-text").animate({
+                        width: 0
+                    });
+                }); */
+
+            });
+
+            /* $(document).ready(function(){
+                var boxWidth = $(".mapa-legend-text").width();
+                $(".ICON").click(function(){
+                    $(".mapa-legend-text").animate({
+                        width: 0
+                    });
+                });
+                $(".slide-right").click(function(){
+                    $(".mapa-legend-text").animate({
+                        width: boxWidth
+                    });
+                });
+            }); */
+        </script> -->
+
+
+
+
+        <!--<div class="mapa-legend-container">
+            <div class="mapa-text-container">
+                <img id="historias-icon" src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-historias.png"  style=" height: 52px; width: auto; cursor: pointer;" >
+                <p id="historias-legend" class="mapa-legend-text">Historias</p>
+            </div>
+
+            <div class="mapa-text-container">
+                <img id="videohistorias-icon" src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-videohistorias.png"  style=" height: 52px; width: auto; cursor: pointer;" >
+                <p id="videohistorias-legend" class="mapa-legend-text">Videohistorias</p>
+            </div>
+
+            <div class="mapa-text-container">
+                <img id="vuelo-icon" src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-vuelo.png"  style=" height: 52px; width: auto; cursor: pointer;" >
+                <p id="vuelo-legend" class="mapa-legend-text">Vuelo de pájaro</p>
+            </div>
+    </div>-->
+    </div>
+
+
+</body>
+
+<script>
+    function onReady(callback) {
+        var intervalId = window.setInterval(function () {
+            if (document.getElementsByTagName('body')[0] !== undefined) {
+                window.clearInterval(intervalId);
+                callback.call(this);
+            }
+        }, 1000);
+    }
+
+    function setVisible(selector, visible) {
+        document.querySelector(selector).style.display = visible ? 'block' : 'none';
+    }
+
+    onReady(function () {
+        // setVisible('.page', true);
+        setVisible('#loading', false);
+    });
+</script>
+
+</html>

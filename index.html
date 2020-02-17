@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>River Stories</title>
+    <link rel="icon" href="https://citariverstories.s3-us-west-1.amazonaws.com/img/logo_riverStories.png">
+
+    <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+
+    <!--JQuery JS Script-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+    <!--Bootstrap CSS Style-->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+
+    <!--Bottom Cards section CSS Style-->
+    <link rel="stylesheet" href="css/bottom-cards-style.css">
+
+    <!-- Nav-Bar -->
+    <link rel="stylesheet" href="css/dancingRivers/dancing_rivers_navbar.css">
+
+    <!--Handling JS Scripts-->
+    <script src="./lib/CLDRPluralRuleParser/CLDRPluralRuleParser.js"></script>
+    <script src="./lib/jquery.i18n/jquery.i18n.js"></script>
+    <script src="./lib/jquery.i18n/jquery.i18n.messagestore.js"></script>
+    <script src="./lib/jquery.i18n/jquery.i18n.fallbacks.js"></script>
+    <script src="./lib/jquery.i18n/jquery.i18n.language.js"></script>
+    <script src="./lib/jquery.i18n/jquery.i18n.parser.js"></script>
+    <script src="./lib/jquery.i18n/jquery.i18n.emitter.js"></script>
+    <script src="./lib/jquery.i18n/jquery.i18n.emitter.bidi.js"></script>
+    <script src="./lib/history/jquery.history.js"></script>
+    <script src="./lib/url/url.min.js"></script>
+
+    <!--New layout script-->
+    <script type="text/javascript" src="./js/dancingRivers/dancingRivers.js"></script>
+
+    <!--Language Handler Logic JS script-->
+    <script type="text/javascript" src="js/index/language_handler_logic.js"></script>
+    <script type="text/javascript" src="js/index/fade_rs.js"></script>
+
+    <link rel="stylesheet" href="css/riverStories/river_stories_general.css">
+    <link rel="stylesheet" href="css/riverStories/river_stories_footer.css">
+
+    <link rel="stylesheet" media="screen and (max-width: 992px)" href="./css/test1.css" />
+    <!--<link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='./css/test2.css' />-->
+    <link rel='stylesheet' media='screen and (min-width: 993px) ' href='./css/test2.css' />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/index/general_web_riverStories.js"></script>
+
+
+    <!-- 1024, 1200, 1440, 1920, 2560 -->
+
+
+    <!--<link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='./css/test2.css' />
+    <link rel='stylesheet' media='screen and (min-width: 993px) ' href='css/riverStories/index_1920.css' />-->
+
+
+    <!--<link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='./css/test2.css' />-->
+    <!--<link rel='stylesheet' media='screen and (min-width: 993px) ' href='css/riverStories/index_1920.css' />-->
+
+    <link rel="stylesheet" href="css/riverStories/river_stories_index.css">
+
+</head>
+
+<style>
+
+    .fade_in {
+        margin: 0;
+        opacity: 1;
+    }
+
+</style>
+
+
+<style>
+    .progress {
+        /*--scroll;*/
+
+        /*background: linear-gradient(to right, #58f9a1 var(--scroll), transparent 0);*/
+        /*background: linear-gradient(to right, #F9EC31 var(--scroll), transparent 0);*/
+        /*background: linear-gradient(to right, #F9EC31 20%, transparent 0);*/
+
+        /*position: fixed;*/
+        width: 100%;
+        /*height: 6px;*/
+        height: 100%;
+        background: linear-gradient(to right, #cc9900 var(--scroll), transparent 0);
+        background-repeat: no-repeat;
+        z-index: 50000;
+
+        /*margin-left: -5px;*/
+    }
+</style>
+
+
+<body id="body_main">
+
+<div id="loading"></div>
+
+
+
+<div style="opacity: 1">
+
+    <div  id="general_background" style="position: absolute; width: 100%; height: 3000%; background-color: white; z-index: 30000">
+    </div>
+
+
+    <!--<div style="width: 100%; height: 6px;  background-color: #dcf1ff; position: fixed; top: 0%; z-index: 2000;">-->
+    <!--<div style="width: 100%; height: 6px;  background: rgba(220,241,255, 0.5); position: fixed; top: 0%; z-index: 2000;">-->
+    <!--<div style="width: 100%; height: 6px;  background: rgba(175,245,255, 0.5); position: fixed; top: 0%; z-index: 2000;">-->
+    <div style="width: 100%; height: 6px;  background: rgba(220,241,255, 0.7); position: fixed; top: 0%; z-index: 2000;">
+        <div class="progress">
+        </div>
+    </div>
+
+    <div class="menu-sections">
+
+        <div class="logo-container">
+            <div id="Logo" class="logo-RS" >
+                <img class="logo-icon" src="https://citariverstories.s3-us-west-1.amazonaws.com/img/logo_riverStories.png">
+            </div>
+        </div>
+
+        <ul class="menu-container">
+            <li><a class="text-menu-section" href="index.html">Historia del Río</a></li>
+            <li><a class="text-menu-section" href="Mapa.html">Mapa de Historias</a></li>
+            <!--<li><a class="text-menu-section" href="Narradores.html">Narradores</a></li>-->
+            <li><a class="text-menu-section" href="Historia.html">Envía tu Historia</a></li>
+            <li><a class="text-menu-section" href="Nosotros.html">Nosotros</a></li>
+        </ul>
+
+    </div>
+
+
+    <!-- 1 -->
+    <div style="position: relative">
+        <!--<img src="./img/dancingRivers/Introducción/RS/C_1_a.gif" width="100%" height="auto">-->
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_1_a.gif" width="100%" height="auto">
+
+        <div style="position: absolute; top: 3%; left: 27%; color: white; font-size: 36px; font-family: Museo-Sans-700;
+                width: 37%; text-align: center;">
+            <!--<img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/LOGOANI.gif" width="100%" height="auto">-->
+            <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/RS-ANIMATED.gif" width="100%" height="auto">
+        </div>
+
+        <div style="position: absolute; top: 21%; left: 48%; color: white; font-size: 36px; font-family: Museo-Sans-700;
+                width: 4%; text-align: center;">
+            <div id="arrow-container"  class="fade_in">
+                <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/FLECHANI.gif" width="100%" height="auto">
+            </div>
+        </div>
+
+        <div id="d1">
+            <div>
+                <p id="p1" class="fade_in" style="">Agua</p>
+                <p id="p2" class="fade_in">Elemento dinámico</p>
+            </div>
+        </div>
+
+        <div id="d2">
+            <p id="p3" class="fade_in">En su quietud, moldea sus formas a la superficie que lo sostiene</p>
+        </div>
+
+        <!-- ROTAR - ANIMAR -->
+        <div style="position: absolute; top: 67%; left: 8%; color: #4D4D4D; font-size: 38px; font-family: Acumin;
+                width: 90%; text-align: center;   -ms-transform: rotate(14deg); /* 3-8 */
+                transform: rotate(14deg); -webkit-transform: rotate(    14deg); ">
+        </div>
+
+        <div style="position: absolute; top: 53.5%; left: 12%; color: #4D4D4D; ;
+                width: 100%; text-align: center;">
+
+            <svg viewBox="0 0 800 400">
+                    <path id="curve" d="m13.33333,156c0,0 39.71951,19.94843 97.86585,34.38949c58.14634,14.44106 145.51828,18.63948 380.67072,102.78241l121.58059,34.03712"/>
+                <text x="25">
+                    <textPath xlink:href="#curve" class="fade_in">
+                        En movimiento, es capaz de transformar los cuerpos que rodean su paso
+                    </textPath>
+                </text>
+            </svg>
+
+            <!-- style="font-family: Museo-Sans-100; font-size: 16px;"-->
+
+        </div>
+
+        <!--<style>
+            path {
+                fill: transparent;
+            }
+            text {
+                fill: #4D4D4D;
+                font-family: Acumin;
+            }
+        </style>-->
+
+        <div id="d3">
+            <p id="p4" class="fade_in">Sedimento</p>
+            <p id="p5" class="fade_in">Nace de las grandes
+                rocas de las montañas</p>
+        </div>
+    </div>
+
+
+    <script>
+
+        $(document).ready(function(){
+                $("#general_background").fadeOut(3000);
+        });
+
+        $("#body_main").on("scroll", function () {
+            if (($("#body_main").scrollTop() + 60 ) > (document.getElementById("arrow-container").clientHeight) ){
+                document.getElementById("arrow-container").style.visibility = "hidden";
+            }else {
+                document.getElementById("arrow-container").style.visibility = "visible";
+            }
+        });
+
+
+
+    </script>
+
+
+    <!-- 2 -->
+    <div style="position: relative">
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_2.gif" width="100%" height="auto">
+
+        <div style="position: absolute; top: 80%; left: 14%; color: white; font-size: 36px; font-family: Museo-Sans-700;
+                width: 30%; text-align: center;">
+            <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/G7_6.gif" width="100%" height="auto">
+        </div>
+
+    </div>
+
+
+    <!-- 3 -->
+    <div style="position: relative">
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_3.gif" width="100%" height="auto">
+    </div>
+
+
+    <!-- 4 -->
+    <div style="position: relative">
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_4.gif" width="100%" height="auto">
+
+        <div  id="d4">
+            <p id="p6" class="fade_in">Hasta convertirse en
+                partículas de diferentes tamaños
+                en su viaje junto al agua</p>
+        </div>
+
+        <!-- CURVEAR -->
+        <div id="d5">
+            <p id="p7" class="fade_in" style="margin: 0;">Ambos forman nuestros</p>
+            <p id="p8" class="fade_in" style="">Ríos Amazónicos</p>
+        </div>
+
+        <div id="d6">
+            <p id="p9" class="fade_in">Su interacción genera
+                cambios en las formas y caminos de los ríos</p>
+        </div>
+
+        <div id="d7">
+            <p id="p10" class="fade_in">¡Como si pudieran bailar!</p>
+        </div>
+
+        <div id="d8">
+            <p id="p11" class="fade_in">Algunos ríos se forman como serpientes</p>
+        </div>
+
+        <div id="d9">
+            <p id="p12" class="fade_in">Ríos meándricos</p>
+        </div>
+
+        <div id="d10">
+            <p id="p13" class="fade_in">Otros crean canales secundarios e islas en su interior</p>
+        </div>
+
+        <div id="d11">
+            <p id="p14" class="fade_in">Ríos multicanal</p>
+        </div>
+
+    </div>
+
+ 
+    <!-- 5 -->
+    <div style="position: relative">
+
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_5.jpg" width="100%" height="auto">
+
+        <div style="position: absolute; top: 6%; left: 18.5%; color: white; font-size: 36px; font-family: Museo-Sans-700;
+                width: 37%; text-align: center;">
+            <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/GG7.gif" width="130%" height="auto">
+        </div>
+
+        <div id="d12">
+            <p id="p15" class="fade_in">Si bien todos los días los ríos se mueven, nos lleva meses, años
+                y siglos el poder notar sus cambios</p>
+        </div>
+
+        <div id="d13">
+            <p id="p16" class="fade_in" style="margin: 0;">Sin embargo,</p>
+            <p class="fade_in" style="font-family: Acumin-bold; margin: 0;">nunca dejan de bailar</p>
+        </div>
+
+        <div id="d14">
+            <p id="p17" class="fade_in" style="margin: 0;">Por tanto, cualquier intervención
+                en ellos debe considerar su dinámica natural</p>
+        </div>
+
+    </div>
+
+
+    <!-- 6 -->
+    <div style="position: relative">
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_6.jpg" width="100%" height="auto">
+
+        <div style="position: absolute; top: 30%; left: 67%; color: white; font-size: 36px; font-family: Museo-Sans-700;
+                width: 36%; text-align: center;">
+            <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/G9.gif" width="100%" height="auto">
+        </div>
+
+        <div id="d15">
+            <p id="p18" class="fade_in">Para comprender estos fenómenos, estamos realizando investigación científica en los ríos más
+                importantes de la cuenca amazónica peruana:</p>
+        </div>
+
+        <div id="d16">
+            <p class="fade_in">Huallaga, Ucayali, Marañón y Amazonas</p>
+        </div>
+
+    </div>
+
+
+    <!-- 7 -->
+    <div style="position: relative">
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_7.gif" width="100%" height="auto">
+
+        <div id="d17">
+            <p class="fade_in">Esto nos permitirá conocer
+                el <span style="font-family: Chewy">comportamiento de los ríos</span>
+                a través de su <span style="font-family: Chewy">dimensión física</span> </p>
+        </div>
+    </div>
+
+
+    <!-- 8 -->
+    <div style="position: relative">
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_8.gif" width="100%" height="auto">
+        <div id="d18">
+            <p class="fade_in">En nuestras campañas científicas, conocimos
+                <span style="font-family: Acumin-bold">más miradas acerca de los ríos</span> </p>
+        </div>
+    </div>
+
+
+    <!-- 9 -->
+    <div style="position: relative">
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_9.gif" width="100%" height="auto">
+        <div id="d19">
+            <p class="fade_in">Nos encontramos con los <span style="font-family: Acumin-bold">Kukama</span>  que,
+                durante generaciones, <span style="font-family: Acumin-bold">han cultivado
+                el conocimiento de los ríos a partir de
+                su convivencia con ellos</span> </p>
+        </div>
+    </div>
+
+
+    <!-- 10 -->
+    <div style="position: relative">
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_10.jpg" width="100%" height="auto">
+
+        <div id="d20">
+            <p class="fade_in" style="margin: 0; font-family: Acumin">Para ellos,</p>
+            <p class="fade_in" style="margin: 0"> el río es un sistema de relacionamiento importante que configura su vida</p>
+        </div>
+
+    </div>
+
+
+    <!-- 11 -->
+    <div style="position: relative">
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_11.jpg" width="100%" height="auto">
+        <div style="position: absolute; top: 0%; left: 0%; color: white; font-size: 36px; font-family: Museo-Sans-700;
+                width: 100%; text-align: center;">
+            <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/DIV6B.gif" width="100%" height="auto">
+        </div>
+    </div>
+
+
+    <!-- 12 -->
+    <div style="position: relative">
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_12.jpg" width="100%" height="auto">
+
+        <div style="position: absolute; top: 87%; left: 50%; color: white; font-size: 36px; font-family: Museo-Sans-700;
+                width: 50%; text-align: center;">
+            <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/TORTUGA.gif" width="100%" height="auto">
+        </div>
+
+        <div id="d21">
+            <p class="fade_in" style="margin: 0; font-family: Acumin;">Además, con aquellos que </p>
+            <p class="fade_in" style="margin: 0">investigan y protegen la
+                inmensa biodiversidad que albergan los ríos</p>
+        </div>
+
+    </div>
+
+
+    <!-- 13 -->
+    <div style="position: relative">
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_13.gif" width="100%" height="auto">
+
+        <div id="d22">
+            <p class="fade_in">Sin embargo, nos encontramos con aquellos que encuentran en los ríos formas para dinamizar
+                economías locales y globales</p>
+        </div>
+    </div>
+
+
+    <!-- 14 -->
+    <div style="position: relative">
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_14.gif" width="100%" height="auto">
+
+        <div id="d23">
+            <p class="fade_in" style="margin: 0; font-family: Acumin">Aquella diversidad evidencia la
+                necesidad de una</p>
+        </div>
+
+    </div>
+
+
+    <!-- 15 -->
+    <div style="position: relative">
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_15_a.gif" width="100%" height="auto">
+
+        <div id="d24">
+            <p class="fade_in" style="margin: 0"> mirada integral de los ríos para la toma de decisiones</p>
+        </div>
+
+        <div id="d25">
+            <p class="fade_in" style="margin: 0;">Esa diversidad compone las</p>
+            <p id="p25-1" class="fade_in">historias de nuestros ríos</p>
+            <p class="fade_in" style="margin: 0;font-family: Acumin">Parte de nuestro quehacer científico es</p>
+            <p class="fade_in" style="margin: 0;font-family: Acumin">también compartir esas historias</p>
+        </div>
+    </div>
+
+
+    <!-- 16 -->
+    <div style="position: relative">
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_16.gif" width="100%" height="auto">
+
+        <div style="position: absolute; top: 5%; left: 3%; color: #4D4D4D; font-size: 36px; font-family: Acumin-bold;
+                    width: 60%; text-align: center">
+            <!--<p style="margin: 0;font-family: Acumin">también compartir esas historias</p>-->
+        </div>
+
+    </div>
+
+    <style>
+        .map-link{
+            color: #ffffff;
+
+        }
+        .map-link:hover{
+            text-decoration: none;
+            color: #ffffff;
+        }
+    </style>
+
+    <!-- 17 -->
+    <div style="position: relative">
+        <!--<img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_17.jpg" width="100%" height="auto">-->
+        <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/C_17_2.jpg" width="100%" height="auto">
+        <div id="d26">
+            <!--<p class="fade_in">Conócelas aquí</p>-->
+            <!--<p class="fade_in"><a class="map-link" href="Mapa.html">Conócelas en el Mapa de Historias</a></p>-->
+            <p><a class="map-link" href="Mapa.html">Conoce el mapa de historias</a></p>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+<script>
+    $(document.body).ready(function() {
+
+        var b = document.body,
+            st = 'scrollTop',
+            sh = 'scrollHeight',
+            scroll;
+
+        document.getElementById("body_main").addEventListener("scroll", function () {
+
+            var b_st = document.body.scrollTop,
+                b_sh = document.body.scrollHeight;
+
+            var h = document.documentElement;
+
+            var progress = document.querySelector('.progress');
+
+            scroll = ((h[st] || b_st) / ( (b_sh) - h.clientHeight) )* 100;
+            progress.style.setProperty('--scroll', scroll + '%');
+            // console.log(scroll);
+        });
+
+    });
+</script>
+
+
+<script>
+    function onReady(callback) {
+        var intervalId = window.setInterval(function() {
+            if (document.getElementsByTagName('body')[0] !== undefined) {
+                window.clearInterval(intervalId);
+                callback.call(this);
+            }
+        }, 1000);
+    }
+
+    function setVisible(selector, visible) {
+        document.querySelector(selector).style.display = visible ? 'block' : 'none';
+    }
+
+    onReady(function() {
+        // setVisible('.page', true);
+        setVisible('#loading', false);
+    });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,1191 @@
+
+
+body, html {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow-x: hidden;
+    /*overflow-y: scroll;*/
+    overflow-y: auto;
+
+
+    margin: 0;
+    background-color: rgba(255,255,255,1);
+    scroll-behavior: smooth;
+    font-family: Museo-Sans-100;
+}
+
+
+#loading {
+    display: block;
+    /*position: absolute;*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    /*bottom: 0;
+    right: 0;*/
+    z-index: 1000000;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(192, 192, 192, 1);
+    background-image: url("https://i.stack.imgur.com/MnyxU.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+/*
+#body_main::-webkit-scrollbar {
+    display: none;
+}
+*/
+
+
+
+.scroll-overlay-box{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.scroll-overlay-box::-webkit-scrollbar{
+    display: block !important;
+}
+
+/* width */
+.scroll-overlay-box::-webkit-scrollbar {
+    width: 10px;
+}
+/* Track */
+.scroll-overlay-box::-webkit-scrollbar-track {
+    /*background: #f1f1f1;*/
+    background: #E1AA7D;
+}
+/* Handle */
+.scroll-overlay-box::-webkit-scrollbar-thumb {
+    background: #888;
+}
+/* Handle on hover */
+.scroll-overlay-box::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
+
+@font-face {
+    font-family: Museo-Sans-100;
+    src: url("../../font/Museo Sans 100/MuseoSans-100.otf");
+}
+@font-face {
+    font-family: Museo-Sans-300;
+    src: url("../../font/Museo Sans 300/MuseoSans-300.otf");
+}
+@font-face {
+    font-family: Museo-Sans-500;
+    src: url("../../font/Museo Sans 500/MuseoSans-500.otf");
+}
+@font-face {
+    font-family: Museo-Sans-700;
+    src: url("../../font/Museo Sans 700/MuseoSans-700.otf");
+}
+
+@font-face {
+    font-family: Acumin-bold;
+    src: url("../../font/acumin-pro-cufonfonts/Acumin-BdPro.otf");
+}
+@font-face {
+    font-family: Acumin;
+    src: url("../../font/acumin-pro-cufonfonts/Acumin-RPro.otf");
+}
+
+@font-face {
+    font-family: Acumin-variable;
+    src: url("../../font/acumin-pro-cufonfonts/AcuminVariableConcept.otf");
+}
+
+@font-face {
+    font-family: KgTurningTables;
+    src: url("../../font/kg_turning_tables/KGTurningTables.ttf");
+}
+
+
+@font-face {
+    font-family: Chewy;
+    src: url("../../font/Chewy/Chewy-Regular.ttf");
+}
+
+
+@font-face {
+    font-family: Varela;
+    src: url("../../font/Varela/VarelaRound-Regular.ttf");
+}
+
+
+
+/**/
+
+ul, ol {
+    list-style:none;
+}
+
+li{
+    margin: 8px 0;
+}
+
+p{
+    margin: 0;
+}
+
+/**/
+
+@keyframes changewidth {
+    from {
+        height: 75px;
+    }
+    to {
+        height: 80px;
+    }
+}
+
+.logo-icon {
+    width: auto;
+    animation-duration: 0.4s;
+    animation-name: changewidth;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    /*border-radius: 50%;
+    box-shadow: 0px 0px 45px -5px rgba(0, 0, 0, 0.5);*/
+
+    /*box-shadow: 0px 0px 45px -5px rgba(0, 0, 0, 0.5);*/
+
+}
+
+
+#Logo{
+    height: 80px;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.button-back:hover{
+    cursor: pointer;
+}
+
+#button-back:hover{
+
+    cursor: pointer;
+}
+
+#button-back-2:hover{
+
+    cursor: pointer;
+}
+
+#button-back-3:hover{
+
+    cursor: pointer;
+}
+
+/*.historias-icon:hover > .historias-legend {
+    display:block;
+
+}*/
+
+.menu-container{
+    display: none;
+    /*display: block;*/
+    /*visibility: hidden;*/
+    z-index: 20000;
+}
+
+.menu-sections:hover > .menu-container {
+    display:block;
+
+}
+
+
+
+.intro-section{
+    position: relative;
+    width: 100%;
+    /*height: 100%;*/
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ------------------------------------------------------------------------------------------ Mapa.html */
+
+/*Mapa de Historias*/
+
+.mapa-background{
+    /*background: url('../../img/dancingRivers/treas.png');*/
+    background: url('https://citariverstories.s3-us-west-1.amazonaws.com/img/treas.png');
+    background-size: cover;
+}
+
+.mapa-legend-container{
+    position: absolute;
+    bottom: 5%;
+    /*right: 4%;*/
+    /*left: 2.5%;*/
+    left: 40px;
+    /*left: 3%;*/
+    z-index: 1000;
+    /*background-color: rgba(0,0,0,0.6);*/
+    border-radius: 8px;
+    /*padding: 30px;*/
+}
+
+.mapa-text-container{
+    /*width: 320px;*/
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
+}
+
+/* .mapa-legend-text{
+    color: #ffffff;
+    font-family: Museo-Sans-500;
+    font-size: 28px;
+    margin: 0;
+    margin-left: 30px;
+
+    background-color: rgba(0,0,0,0.6);
+    padding: 4px 10px;
+    border-radius: 6px;
+
+    
+} */
+
+
+
+
+#map {
+    /*height: 400px;*/  /* The height is 400 pixels */
+    height: 100%;
+    width: 100%;  /* The width is the width of the web page */
+    will-change: transform;
+    /*background-color: #138496;*/
+}
+
+#image-container_{
+    /*width: 460px;*/
+    height: 70vh;
+}
+
+
+#overlay {
+    position: fixed;
+    display: none;
+    overflow-y: auto;
+    width: 100%;
+    /*height: 180vh;*/
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    /*z-index: 2;*/
+    /*cursor: pointer;*/
+    z-index: 6000;
+}
+
+/*#overlay::-webkit-scrollbar {
+    display: none;
+}*/
+
+.button-back{
+    position: fixed;
+    top: 62px;
+    left: 3.5%;
+    z-index: 1000;
+}
+
+/*Historias*/
+.historias-overlay-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#historias-overlay{
+    display: none;
+}
+#historias-overlay-2{
+    display: none;
+}
+#historias-overlay-3{
+    display: none;
+}
+
+.historias-people-container{
+    width: 56%;
+    display: flex;
+    /*flex-direction: column;*/
+    flex-direction: row;
+    align-items: center;
+}
+.historias-people-photo{
+    min-width: 175px;
+    min-height: 175px;
+    border-radius: 50%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+}
+.historias-people-text-name{
+    font-size: 22px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    color: white;
+}
+.historias-people-text-description{
+    font-size: 14px;
+    text-align: center;
+    color: #B3B3B3;
+    margin-bottom: 6px;
+    color: white;
+}
+.historias-autor-number-text{
+    font-size: 18px;
+    text-align: center;
+    /*color: #B3B3B3;*/
+    margin-bottom: 6px;
+    background-color: #EDE7CC;
+    width: 200px;
+    padding: 6px;
+    color: #000000;
+}
+
+
+/**/
+.container-title-historia-mapa{
+    position: absolute;
+    width: 700px;
+    padding: 36px;
+    background-color: #3D352F;
+    text-align: center;
+    font-size: 66px;
+    color: #ffffff;
+    font-family: KgTurningTables;
+}
+
+.background-title-historia-mapa{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #65574D;
+}
+
+
+.text-decription-historia-mapa{
+    color: #ffffff;
+    width: 56%;
+    text-align: justify;
+    font-size: 26px;
+}
+
+.historias-overlay-container .section-2{
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+    background-color: #3D352F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.historias-overlay-container .section-3{
+    position: relative;
+    width: 100%;
+    /*height: 100%;*/
+    padding: 80px 0;
+    /*background-color: #47806E;*/
+    background-image: url('https://citariverstories.s3-us-west-1.amazonaws.com/img/historia_wan_1.PNG');
+    background-size: cover;
+    min-height: 100vh;
+    /*display: flex;*/
+    /*flex-direction: ;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.historias-overlay-container .section-4{
+    position: relative;
+    width: 100%;
+    /*height: 100%;*/
+    padding: 80px 0;
+    background-color: #47806E;
+    /*display: flex;*/
+    /*flex-direction: ;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.historias-overlay-container .section-5{
+    position: relative;
+    width: 100%;
+    /*height: 100%;*/
+    padding: 80px 0;
+    /*background-color: #47806E;*/
+    background-image: url('https://citariverstories.s3-us-west-1.amazonaws.com/img/historia_wan_2.PNG');
+    background-size: cover;
+    min-height: 100vh;
+    /*display: flex;*/
+    /*flex-direction: ;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.historias-overlay-container .section-6{
+    position: relative;
+    width: 100%;
+    /*height: 100%;*/
+    padding: 80px 0;
+    background-color: #9C8B68;
+    /*display: flex;*/
+    /*flex-direction: ;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.historias-overlay-container .section-7{
+    position: relative;
+    width: 100%;
+    /*height: 100%;*/
+    padding: 80px 0;
+    background-color: #65574D;
+    /*display: flex;*/
+    /*flex-direction: ;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.container-autor-historia-mapa{
+    position: relative;
+    width: 100%;
+    /*height: 100%;*/
+    padding: 80px 0;
+    background-color: #3D352F;
+    /*display: flex;*/
+    /*flex-direction: ;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/**/
+.historias-overlay-container-style-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.historias-overlay-container-style-2 .section-2{
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+    background-color: #3D352F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.historias-overlay-container-style-2 .section-3{
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+    background-image: url('https://citariverstories.s3-us-west-1.amazonaws.com/img/historia_gabriela_1.jpg');
+    /*background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;*/
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 0;
+}
+
+.historias-overlay-container-style-2 .section-4{
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+    background-color: #47806E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.historias-overlay-container-style-2 .section-5{
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+    background-image: url('https://citariverstories.s3-us-west-1.amazonaws.com/img/historia_gabriela_2.jpg');
+    /*background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;*/
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 0;
+}
+
+.historias-overlay-container-style-2 .section-6{
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+    background-color: #9C8B68;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.historias-overlay-container-style-2 .section-7{
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+    background-color: #65574D;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/**/
+
+/*Videohistorias*/
+.videohistorias-overlay-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*width: 100%;
+    height: 100%;*/
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+#videohistorias-overlay{
+    display: none;
+}
+
+#videohistorias-overlay-2{
+    display: none;
+}
+
+#videohistorias-overlay-3{
+    display: none;
+}
+
+.box-videohistoria{
+    width: 60%;
+    height: 88%;
+    background-color: #E1AA7D;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px 65px;
+    /*overflow:auto;*/
+    /*overflow: scroll;*/
+}
+.container-title-videohistoria{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+
+.container-title-videohistoria p{
+    color: #ffffff;
+    font-family: Museo-Sans-500;
+    font-size: 28px;
+    margin: 0;
+    margin-left: 30px;
+}
+
+
+/*Vuelos*/
+.video-vuelo{
+    display: block;
+    z-index: 500;
+    width: 100vw;
+    height: auto;
+    background-position: center;
+    background-size: 75% auto;
+    background-position: center;
+    overflow-y: scroll;
+}
+
+.vuelos-overlay-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*width: 100%;
+    height: 100%;*/
+    width: 100vw;
+    /*height: 100vh;*/
+    overflow-y: scroll;
+}
+
+#vuelos-overlay{
+    display: none;
+}
+#vuelos-overlay-2{
+    display: none;
+}
+#vuelos-overlay-3{
+    display: none;
+}
+
+.container-title-vuelo{
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px 60px;
+    z-index: 500;
+    font-family: Museo-Sans-300;
+}
+.container-title-vuelo h1{
+    font-weight: 900;
+}
+.container-title-vuelo p{
+    font-size: 26px;
+    font-weight: 100;
+}
+
+
+/*Leyenda*/
+#historias-legend{
+    /* display: none; */
+}
+#videohistorias-legend{
+    /* display: none; */
+}
+#vuelo-legend{
+    /* display: none; */
+}
+
+/* --------------------------------------------------------------------------------------- Fin Mapa.html */
+
+
+/* --------------------------------------------------------------------------------------- Narradores.html */
+/*Narradores*/
+
+.narradores-background{
+
+    /*background: url('../../img/dancingRivers/DJI_0130.jpg');*/
+    background: url('https://citariverstories.s3-us-west-1.amazonaws.com/img/DJI_0130.jpg');
+    background-size: cover;
+
+}
+
+.narradores-main-title{
+    /*position: absolute;*/
+    /*top: 43%;*/
+    /*left: 32%;*/
+    font-size: 80px;
+    color: #ffffff;
+    font-family: KgTurningTables;
+}
+
+.narradores-people-section{
+    position: relative;
+    width: 100%;
+    /*height: 100%;*/
+    padding: 60px 0;
+    background-color: #E0F3FD;
+    /*display: flex;*/
+    /*flex-direction: ;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.narradores-row-container{
+    width: 60%;
+    padding: 35px 0;
+    /*height: 30vh;*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /*justify-content: space-between;*/
+    justify-content: space-around;
+    align-items: center;
+    /*margin-bottom: 20px;*/
+}
+
+.narradores-people-text-name{
+
+    position: absolute;
+    bottom: 2%;
+    left: 6%;
+    color: #ffffff;
+
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+
+.narradores-people-text-description{
+    font-size: 14px;
+    text-align: left;
+    margin-left: 15px;
+    color: #B3B3B3;
+    margin-bottom: 6px;
+}
+
+.narradores-people-photo{
+    position: relative;
+    /*min-width: 260px;*/
+    min-width: 220px;
+    /*min-width: 175px;*/
+    /*min-height: 260px;*/
+    min-height: 220px;
+    /*min-height: 190px;*/
+    /*min-height: 175px;*/
+    /*border-radius: 50%;*/
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+}
+
+.narradores-people-text-container{
+    width: 100%;
+    background-color: #354A6B;
+    padding: 5px 0;
+}
+/* ----------------------------------------------------------------------------------- Fin Narradores.html */
+
+
+
+/* --------------------------------------------------------------------------------------- Historia.html */
+/*Envia tu Historia*/
+
+.historia-background{
+    /*background: url('../../img/dancingRivers/DJI_0042.jpg');*/
+    background: url('https://citariverstories.s3-us-west-1.amazonaws.com/img/DJI_0042.jpg');
+    background-size: cover;
+}
+
+
+.historia-section{
+    position: relative;
+    width: 100%;
+    /*height: 100%;*/
+    padding: 80px 22%;
+    background-color: #F2E4A0;
+    /*background-color: #E0F3FD;*/
+    /*display: flex;*/
+    /*flex-direction: ;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.historia-section > * {
+    font-family: Museo-Sans-300;
+    font-size: 22px;
+}
+
+.historia-information-container{
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    width: 400px;
+}
+
+.historia-template-container{
+    /*display: flex;*/
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.historia-link-template{
+    color: #ffffff;
+    font-size: 16px;
+    font-family: Museo-Sans-300;
+}
+
+.historia-template-icon{
+    margin-left: 20px;
+    cursor: pointer;
+}
+/* ------------------------------------------------------------------------------------ Fin Historia.html */
+
+
+
+/* --------------------------------------------------------------------------------------- Nosotros.html */
+/*Nosotros*/
+
+.nosotros-description-section{
+    position: relative;
+    width: 100%;
+    /*height: 100%;*/
+    padding: 80px 0;
+    background-color: #3D352F;
+    /*display: flex;*/
+    /*flex-direction: ;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nosotros-background{
+    /*background: url('../../img/dancingRivers/DJI_0035.jpg');*/
+    background: url('https://citariverstories.s3-us-west-1.amazonaws.com/img/DJI_0035.jpg');
+    background-size: cover;
+
+}
+
+.nosotros-collaborations-section{
+    position: relative;
+    width: 100%;
+    /*height: 100%;*/
+    padding: 60px 0;
+    background-color: #ffffff;
+    /*display: flex;*/
+    /*flex-direction: ;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.nosotros-team-section{
+    position: relative;
+    width: 100%;
+    /*height: 100%;*/
+    padding: 80px 20%;
+    background-color: #354A6B;
+    /*display: flex;*/
+    /*flex-direction: ;*/
+    display: flex;
+    flex-direction: column;
+    /*flex-direction: row;*/
+    justify-content: center;
+    align-items: center;
+    font-family: Museo-Sans-100;
+}
+
+
+.nosotros-description-text{
+    color: #ffffff;
+    width: 56%;
+    text-align: justify;
+    font-size: 26px;
+}
+
+
+.nosotros-team-title{
+    color: #ffffff;
+    width: 100%;
+    /*text-align: justify;*/
+    text-align: center;
+    font-size: 32px;
+    font-family: Museo-Sans-700;
+    margin-bottom: 30px;
+}
+
+.nosotros-team-area{
+    color: #ffffff;
+    /*width: 60%;*/
+    text-align: justify;
+    font-size: 18px;
+    font-family: Museo-Sans-500;
+}
+
+.nosotros-team-name{
+    color: #ffffff;
+    /*width: 60%;*/
+    text-align: justify;
+    font-size: 18px;
+}
+
+
+.nosotros-logos-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    width: 60%;
+}
+
+.nosotros-collaborations-text{
+    color: #000000;
+    /*width: 60%;*/
+    text-align: justify;
+    font-size: 20px;
+    margin: 0;
+}
+
+.nosotros-moore-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    width: 60%;
+}
+/* --------------------------------------------------------------------------------------- Nosotros.html */
+
+
+
+
+/*---------------------------------------------------------------------------------------------------------------------------- Responsive*/
+/**/
+
+@media (min-width: 0px) {
+
+
+
+    .logo-container{
+        display: block;
+        min-height: 60px;
+    }
+
+
+    .menu-sections{
+        position: fixed;
+        top: 26px;
+        /*top: 8%;*/
+        left: 26px;
+        z-index: 1000;
+
+    }
+
+    .text-menu-section{
+        font-family: Museo-Sans-500;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: rgba(0,0,0,0.6);
+        /*background-color: black;*/
+        padding: 5px 10px;
+        border-radius: 6px;
+        margin: 10px 0;
+        /*margin: 6px 0;*/
+    }
+
+
+    .text-menu-section:hover{
+        text-decoration: none;
+        /* text-underline: none; */
+        color: #ffffff;
+    }
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 1024px) {
+
+}
+
+@media (min-width: 1200px) {
+
+
+
+    .logo-container{
+        display: block;
+        min-height: 60px;
+    }
+
+
+    .menu-sections{
+        position: fixed;
+        top: 26px;
+        /*top: 8%;*/
+        left: 26px;
+        z-index: 1000;
+
+    }
+
+    .text-menu-section{
+        font-family: Museo-Sans-500;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: rgba(0,0,0,0.6);
+        /*background-color: black;*/
+        padding: 5px 10px;
+        border-radius: 6px;
+        margin: 10px 0;
+        /*margin: 6px 0;*/
+    }
+
+
+    .text-menu-section:hover{
+        text-decoration: none;
+        text-underline: none;
+        color: #ffffff;
+    }
+}
+
+@media (min-width: 1440px) {
+
+
+    .logo-container{
+        display: block;
+        min-height: 60px;
+    }
+
+
+    .menu-sections{
+        position: fixed;
+        top: 26px;
+        /*top: 8%;*/
+        /*left: 60px;*/
+        left: 26px;
+        /*left: 4%;*/
+        z-index: 1000;
+
+        /*width: 190px;
+        height: 250px;
+        background-color: #fd7e14;*/
+
+    }
+
+    .text-menu-section{
+        font-family: Museo-Sans-500;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: rgba(0,0,0,0.6);
+        /*background-color: black;*/
+        padding: 5px 10px;
+        border-radius: 6px;
+        margin: 10px 0;
+        /*margin: 6px 0;*/
+    }
+
+
+    .text-menu-section:hover{
+        text-decoration: none;
+        text-underline: none;
+        color: #ffffff;
+    }
+
+}
+
+@media (min-width: 1920px) {
+
+
+    .logo-container{
+        display: block;
+        min-height: 80px;
+    }
+
+
+    .menu-sections{
+        position: fixed;
+        top: 26px;
+        /*top: 8%;*/
+        left: 26px;
+        z-index: 1000;
+
+    }
+
+    .text-menu-section{
+        font-family: Museo-Sans-500;
+        font-size: 28px;
+        color: #ffffff;
+        background-color: rgba(0,0,0,0.6);
+        /*background-color: black;*/
+        padding: 5px 10px;
+        border-radius: 6px;
+        margin: 10px 0;
+        /*margin: 6px 0;*/
+    }
+
+
+    .text-menu-section:hover{
+        text-decoration: none;
+        text-underline: none;
+        color: #ffffff;
+    }
+
+}
+
+@media (min-width: 2560px) {
+
+}
+/*-------------------------------------------------------------------------------------------------------------------------- Fin Responsive*/
