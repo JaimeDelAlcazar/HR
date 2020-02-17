@@ -139,6 +139,9 @@ p{
     margin: 0;
 }
 
+
+
+
 /**/
 
 @keyframes changewidth {
@@ -228,6 +231,22 @@ p{
 }
 
 
+
+.menu-container ul{
+    background-color: rgba(0,0,0,0.6);
+
+    padding: 15px 0;
+    border-radius: 20px;
+}
+
+.menu-container ul li{
+    width: 100%;
+    padding: 0 20px;
+}
+
+.menu-container ul li:hover{
+    background-color: #006a00;
+}
 /* ------------------------------------------------------------------------------------------ Mapa.html */
 
 /*Mapa de Historias*/
@@ -1038,7 +1057,7 @@ p{
         font-family: Museo-Sans-500;
         font-size: 20px;
         color: #ffffff;
-        background-color: rgba(0,0,0,0.6);
+        /* background-color: rgba(0,0,0,0.6); */
         /*background-color: black;*/
         padding: 5px 10px;
         border-radius: 6px;
@@ -1085,7 +1104,7 @@ p{
         font-family: Museo-Sans-500;
         font-size: 20px;
         color: #ffffff;
-        background-color: rgba(0,0,0,0.6);
+        /* background-color: rgba(0,0,0,0.6); */
         /*background-color: black;*/
         padding: 5px 10px;
         border-radius: 6px;
@@ -1096,7 +1115,7 @@ p{
 
     .text-menu-section:hover{
         text-decoration: none;
-        text-underline: none;
+        /* text-underline: none; */
         color: #ffffff;
     }
 }
@@ -1129,7 +1148,7 @@ p{
         font-family: Museo-Sans-500;
         font-size: 20px;
         color: #ffffff;
-        background-color: rgba(0,0,0,0.6);
+        /* background-color: rgba(0,0,0,0.6); */
         /*background-color: black;*/
         padding: 5px 10px;
         border-radius: 6px;
@@ -1140,7 +1159,7 @@ p{
 
     .text-menu-section:hover{
         text-decoration: none;
-        text-underline: none;
+        /* text-underline: none; */
         color: #ffffff;
     }
 
@@ -1168,7 +1187,7 @@ p{
         font-family: Museo-Sans-500;
         font-size: 28px;
         color: #ffffff;
-        background-color: rgba(0,0,0,0.6);
+        /* background-color: rgba(0,0,0,0.6); */
         /*background-color: black;*/
         padding: 5px 10px;
         border-radius: 6px;
@@ -1179,7 +1198,7 @@ p{
 
     .text-menu-section:hover{
         text-decoration: none;
-        text-underline: none;
+        /* text-underline: none; */
         color: #ffffff;
     }
 

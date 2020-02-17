@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+
+    <title>River Stories</title>
+    <link rel="icon" href="https://citariverstories.s3-us-west-1.amazonaws.com/img/logo_riverStories.png">
+
+    <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+
+    <!--JQuery JS Script-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+    <!--Bootstrap CSS Style-->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+
+    <!--Bottom Cards section CSS Style-->
+    <link rel="stylesheet" href="css/bottom-cards-style.css">
+
+
+    <!--New layout script-->
+    <!--<script type="text/javascript" src="./js/dancingRivers/dancingRivers.js"></script>-->
+
+    <!--Language Handler Logic JS script-->
+    <!--<script type="text/javascript" src="js/index/language_handler_logic.js"></script>
+    <script type="text/javascript" src="js/index/fade_rs.js"></script>-->
+
+<!--    <link rel="stylesheet" href="css/riverStories/river_stories_general.css">
+    <link rel="stylesheet" href="css/riverStories/river_stories_footer.css">-->
+
+<!--    <link rel="stylesheet" media="screen and (max-width: 992px)" href="./css/test1.css" />
+    <link rel='stylesheet' media='screen and (min-width: 993px)' href='./css/test2.css' />-->
+
+    <!--<script type="text/javascript" src="js/index/general_web_riverStories.js"></script>-->
+
+    <script type="text/javascript" src="general_web_riverStories_TEST.js"></script>
+
+    <style>
+        @font-face {
+            font-family: Museo-Sans-500;
+            src: url("font/Museo Sans 500/MuseoSans-500.otf");
+        }
+    </style>
+
+
+</head>
+
+
+<style>
+
+    body, html {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        /*overflow-x: hidden;*/
+        margin: 0;
+        background-color: rgba(255,255,255,1);
+        /*scroll-behavior: smooth;*/
+        font-family: Museo-Sans-100;
+
+        /*overflow: hidden;*/
+        /*overflow: scroll;*/
+
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    body::-webkit-scrollbar{
+        display: none;
+
+    }
+
+    .scroll-prueba-box{
+        overflow-y: scroll;
+    }
+
+    .scroll-prueba-box::-webkit-scrollbar{
+        /*display: block;*/
+        display: flow !important;
+    }
+
+    /* width */
+    .scroll-prueba-box::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    .scroll-prueba-box::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    .scroll-prueba-box::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    /* Handle on hover */
+    .scroll-prueba-box::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+
+/*
+    !* width *!
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    !* Track *!
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    !* Handle *!
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    !* Handle on hover *!
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    */
+
+</style>
+
+
+<style>
+    body {
+        /*background: #FFF url("https://i.imgur.com/KheAuef.png") top left repeat-x;
+        font-family: 'Alex Brush', cursive !important;*/
+    }
+
+    .page    { display: none; padding: 0 0.5em; }
+    .page h1 { font-size: 2em; line-height: 1em; margin-top: 1.1em; font-weight: bold; }
+    .page p  { font-size: 1.5em; line-height: 1.275em; margin-top: 0.15em; }
+
+    /*#loading {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(192, 192, 192, 0.5);
+        background-image: url("https://i.stack.imgur.com/MnyxU.gif");
+        background-repeat: no-repeat;
+        background-position: center;
+    }*/
+    #loading {
+        display: block;
+        /*position: absolute;*/
+        position: fixed;
+        top: 0;
+        left: 0;
+        /*bottom: 0;
+        right: 0;*/
+        z-index: 1000000;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(192, 192, 192, 1);
+        background-image: url("https://i.stack.imgur.com/MnyxU.gif");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+</style>
+
+
+<body id="body_main">
+
+<!--<div class="menu-sections">
+
+    <div class="logo-container">
+        <div id="Logo" class="logo-RS" >
+            <img class="logo-icon" src="https://citariverstories.s3-us-west-1.amazonaws.com/img/logo_riverStories.png">
+        </div>
+    </div>
+
+    <ul class="menu-container">
+        <li><a class="text-menu-section" href="index.html">Historia del Río</a></li>
+        <li><a class="text-menu-section" href="Mapa.html">Mapa de Historias</a></li>
+        &lt;!&ndash;<li><a class="text-menu-section" href="Narradores.html">Narradores</a></li>&ndash;&gt;
+        <li><a class="text-menu-section" href="Historia.html">Envía tu Historia</a></li>
+        <li><a class="text-menu-section" href="Nosotros.html">Nosotros</a></li>
+    </ul>
+
+</div>
+
+<div class="intro-section nosotros-background">
+    <div class="narradores-main-title">
+            <p style="margin: 0">HISTORIAS DEL RIO</p>
+    </div>
+</div>
+
+&lt;!&ndash;Descripcion&ndash;&gt;
+<div class="nosotros-description-section">
+
+<p class="nosotros-description-text">"Historias del río" es una plataforma web libre
+    que reúne historias de todos los que
+nos involucramos con los ríos: ciudadanos, pueblos indígenas, científicos,tomadores de
+decisión, entre otros actores. A todas nuestras historias las une el río, aun así, sean en
+diferentes lenguas y t.</p>
+
+</div>
+
+
+&lt;!&ndash;Collaborations&ndash;&gt;
+<div class="nosotros-collaborations-section">
+
+    <p class="nosotros-collaborations-text">Es una iniciativa liderada por</p>
+    <div class="nosotros-logos-container">
+        <a href="https://www.utec.edu.pe/" target="_blank">
+            <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/logo_utec.png" width="auto" height="110px">
+        </a>
+        <a href="https://cita.utec.edu.pe/" target="_blank">
+            <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/cita-logo-black.png" width="auto" height="90px">
+        </a>
+        <a href="https://www.facebook.com/CienciaxRios/" target="_blank">
+            <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/LOGO-CXR.png" width="auto" height="95px">
+        </a>
+    </div>
+
+    <p class="nosotros-collaborations-text">Financiada por</p>
+    <div class="nosotros-moore-container">
+        <a href="https://www.moore.org/grant-detail?grantId=GBMF7711" target="_blank">
+            <img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/moore-logo-2.png" width="auto" height="90px">
+        </a>
+    </div>
+
+</div>
+
+
+<div class="nosotros-team-section">
+
+
+    <p class="nosotros-team-title">Equipo</p><br>
+
+    <div style="display: flex; flex-direction: row; justify-content: center; align-items: flex-start; width: 100%;">
+
+        <div style="width: 33%; display: flex; flex-direction: column; justify-content: center;align-items: center;">
+            <p class="nosotros-team-area">Coordinación</p>
+            <p class="nosotros-team-name">Evelyn Calderon</p>
+            <p class="nosotros-team-name">Jorge Abad</p><br>
+
+        </div>
+
+        <div style="width: 33%; display: flex; flex-direction: column; justify-content: center;align-items: center;">
+            <p class="nosotros-team-area">Ilustración y Diseño</p>
+            <p class="nosotros-team-name">Roger Marquez</p><br>
+        </div>
+
+        <div style="width: 33%; display: flex; flex-direction: column; justify-content: center;align-items: center;">
+            <p class="nosotros-team-area">Desarrollo Web</p>
+            <p class="nosotros-team-name">Wan Chantavilasvong</p>
+            <p class="nosotros-team-name">Gerardo Valencia</p>
+            <p class="nosotros-team-name">Jaime Del Alcázar</p><br>
+
+        </div>
+
+    </div>
+
+</div>-->
+<!--<progress>
+
+</progress>-->
+
+<!--Loader h3 spin-->
+<!--<style>
+    .loader {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+    }
+
+    /* Safari */
+    @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+<div class="loader"></div>-->
+
+
+
+
+
+<!--<div class="page">
+    <h1>The standard Lorem Ipsum passage</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>-->
+<div id="loading"></div>
+
+
+
+<script>
+    function onReady(callback) {
+        var intervalId = window.setInterval(function() {
+            if (document.getElementsByTagName('body')[0] !== undefined) {
+                window.clearInterval(intervalId);
+                callback.call(this);
+            }
+        }, 1000);
+    }
+
+    function setVisible(selector, visible) {
+        document.querySelector(selector).style.display = visible ? 'block' : 'none';
+    }
+
+    onReady(function() {
+        // setVisible('.page', true);
+        setVisible('#loading', false);
+    });
+</script>
+
+
+<div class="progress"></div>
+
+
+<style>
+    .box{
+        float:left;
+        overflow: hidden;
+        background: #f0e68c;
+    }
+    /* Add padding and border to inner content
+    for better animation effect */
+    .box-inner{
+        width: 400px;
+        padding: 10px;
+        border: 1px solid #a29415;
+    }
+</style>
+
+
+<div style="height: 50vh; width: 100vw">
+
+
+
+
+
+    <button type="button" class="slide-left">Slide Left</button>
+    <button type="button" class="slide-right">Slide Right</button>
+    <hr>
+    <div class="box">
+        <div class="box-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Vestibulum id metus ac nisl bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet sagittis. In tincidunt orci sit amet elementum vestibulum. Vivamus fermentum in arcu in aliquam. Quisque aliquam porta odio in fringilla. Vivamus nisl leo, blandit at bibendum eu, tristique eget risus. Integer aliquet quam ut elit suscipit, id interdum neque porttitor. Integer faucibus ligula.</div>
+    </div>
+
+</div>
+
+<script>
+    $(document).ready(function(){
+        var boxWidth = $(".box").width();
+        $(".slide-left").click(function(){
+            $(".box").animate({
+                width: 0
+            });
+        });
+        $(".slide-right").click(function(){
+            $(".box").animate({
+                width: boxWidth
+            });
+        });
+    });
+</script>
+
+
+<!-- ------------------------------------------------------------------   -->
+
+
+<div style="width: 100vw; height: 60vh; background-color: #f2f2f2">
+
+
+    <style>
+        /*.mapa-text-container{
+            !*width: 320px;*!
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .mapa-legend-text{
+            color: #ffffff;
+            font-family: Museo-Sans-500;
+            font-size: 28px;
+            margin: 0;
+            margin-left: 30px;
+
+            background-color: rgba(0,0,0,0.6);
+            padding: 4px 10px;
+            border-radius: 6px;
+        }*/
+    </style>
+
+
+    <!--<div class="mapa-text-container">
+        <img id="videohistorias-icon" class="ICON" src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-videohistorias.png"  style=" height: 52px; width: auto; cursor: pointer;" >
+        <p id="videohistorias-legend" class="mapa-legend-text">Videohistorias</p>
+    </div>-->
+
+    <style>
+        .mapa-legend-text{
+            /*float:left;*/
+            overflow: hidden;
+            /*background: #f0e68c;*/
+            background-color: rgba(0,0,0,0.6);
+            margin-left: 30px;
+
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            justify-content: flex-start;
+            align-items: center;
+            /*margin: 10px 0;*/
+
+            border-radius: 6px;
+
+            color: #ffffff;
+            font-family: Museo-Sans-500;
+            font-size: 28px;
+
+            /*padding: 4px 10px;*/
+
+
+
+            /*CORREGIR*/
+            /* padding: 0 10px; */
+
+
+        }
+        /* Add padding and border to inner content
+        for better animation effect */
+        .text-legend{
+            /*width: 400px;
+            padding: 10px;*/
+            /*border: 1px solid #a29415;*/
+            margin: 0 10px;
+        }
+    </style>
+
+    <div  style="display: flex; flex-direction: row;">
+        <img id="videohistorias-icon" class="ICON" src="https://citariverstories.s3-us-west-1.amazonaws.com/img/icon-videohistorias.png"  style=" height: 52px; width: auto; cursor: pointer;" >
+
+        <div class="mapa-legend-text">
+            <div class="text-legend">Videohistorias</div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function(){
+            var boxWidth = $(".mapa-legend-text").width();
+            $(".ICON").click(function(){
+                $(".mapa-legend-text").animate({
+                    width: 0
+                });
+            });
+            $(".slide-right").click(function(){
+                $(".mapa-legend-text").animate({
+                    width: boxWidth
+                });
+            });
+        });
+    </script>
+
+
+
+</div>
+
+
+
+<style>
+/*    #myProgress {
+        width: 100%;
+        !*background-color: rgb(117, 108, 122);*!
+        background-color: #f1f1f1;
+        position: fixed;
+    }
+
+    #myBar {
+        !*width: 1%;*!
+        !*height: 30px;*!
+        height: 8px;
+        background-color: green;
+
+        background-repeat: no-repeat;
+    }*/
+/*:root{
+    --scroll: 0;
+}*/
+.progress {
+    /*--scroll;*/
+    background: linear-gradient(to right, #58f9a1 var(--scroll), transparent 0);
+    /*background: linear-gradient(to right, #F9EC31 var(--scroll), transparent 0);*/
+    /*background: linear-gradient(to right, #F9EC31 20%, transparent 0);*/
+    background-repeat: no-repeat;
+    position: fixed;
+    width: 100%;
+    height: 4px;
+    z-index: 50000;
+}
+
+
+</style>
+
+<!--<div id="myProgress">
+    <div id="myBar"></div>
+</div>-->
+
+
+
+
+<div style="height: 40vh; width: 100%; background-color: #138496;">
+
+</div>
+
+<div style="height: 70vh; width: 100%; background-color: #007bff;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+    <div class="scroll-prueba-box" style="width: 40%; height: 50%; background-color: white">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+        s<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+    </div>
+
+</div>
+
+
+<div style="height: 90vh; width: 100%;">
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+</div>
+
+<div style="height: 120vh; width: 100%; background-color: #fd7e14;">
+
+</div>
+
+
+<!--<script>
+    var h = document.documentElement,
+        b = document.body,
+        st = 'scrollTop',
+        sh = 'scrollHeight',
+
+        scroll;
+    // progress = document.querySelector('.progress'),
+
+    console.log("xd");
+
+
+    $(document).ready(function() {
+
+        console.log("ssda");
+
+        document.addEventListener("scroll", function () {
+            console.log("gaaaa");
+
+            scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+            console.log(scroll);
+
+            // progress.style.setProperty('&#45;&#45;scroll', scroll + '%');
+
+        });
+
+    });
+</script>-->
+
+
+
+
+
+<!--Footer-->
+<div id="Footer">
+
+    <div class="footer-top-container">
+        <p class="footer-text" data-i18n="footer_address">Jr. Medrano Silva 165 Barranco</p>
+        <p class="footer-text" data-i18n="footer_phone_annex">P. (01) 2305020 Anexo 4295</p>
+        <p class="footer-text" data-i18n="footer_web">W. http://www.cita.utec.edu.pe/</p>
+        <p class="footer-text" data-i18n="footer_mail">C. cita@utec.edu.pe</p>
+
+        <!--<div class="row-flex">
+            <div class="footer-logo-container" >
+                <a href="https://www.facebook.com/CITAUTEC/" target="_blank"><img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/facebook_circle_gray.png" width="100%" height="100%"></a>
+            </div>
+            <div class="footer-logo-container">
+                <a href="https://www.youtube.com/channel/UCwC0Nzlv29aYXlZSMwXqgqw" target="_blank"><img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/youtube_circle_gray.png" width="100%" height="100%" ></a>
+            </div>
+            <div class="footer-logo-container">
+                <a href="https://twitter.com/CITA_UTEC" target="_blank"><img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/twitter_circle_gray.png" width="100%" height="100%" ></a>
+            </div>
+            <div class="footer-logo-container">
+                <a href="https://www.instagram.com/cita_utec/" target="_blank"><img src="https://citariverstories.s3-us-west-1.amazonaws.com/img/instagram_circle_gray.png" width="100%" height="100%" ></a>
+            </div>
+        </div>-->
+    </div>
+
+<!--    <div class="footer-bottom-container">
+        <p class="footer-text" data-i18n="footer_copy-logo">Copyright &copy 2019 CITA-UTEC.</p>
+        <span>&nbsp;</span>
+        <span class="footer-text" data-i18n="footer_copyright">All rights reserved.</span>
+    </div>-->
+
+</div>
+
+
+
+</body>
+
+</html>

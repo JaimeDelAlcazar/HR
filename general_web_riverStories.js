@@ -68,7 +68,7 @@ $(document).ready(function() {
     var boxVideohistoriasWidth = $("#videohistorias-legend").width();
 
     var boxVueloWidth = $("#vuelo-legend").width();
-
+ 
 
 
     setTimeout(function() {
